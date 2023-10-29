@@ -14,7 +14,7 @@
             <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
             <div class="mb-4 text-sm text-gray-600">
-                {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+                {{ __('Je wachtwoord vergeten? Geen probleem. Bevestig je e-mailadres en wij sturen je een link om je wachtwoord te resetten.') }}
             </div>
 
             <form method="POST" action="{{ route('password.email') }}">
@@ -23,7 +23,7 @@
                 <!-- Email Address -->
                 <div class="mt-4">
                     <label class="block text-sm font-medium text-gray-700">
-                        {{ __('Email') }}
+                        {{ __('E-mail') }}
                     </label>
 
                     <input id="email" type="email"
@@ -40,7 +40,7 @@
                 <div class="mt-4 flex items-center justify-end">
                     <button type="submit"
                         class="ml-4 inline-flex items-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white ring-gray-300 transition duration-150 ease-in-out hover:bg-gray-700 focus:border-gray-900 focus:outline-none focus:ring active:bg-gray-900 disabled:opacity-25">
-                        {{ __('Email Password Reset Link') }}
+                        {{ __('E-mail Wachtwoord Reset Link') }}
                     </button>
                 </div>
             </form>

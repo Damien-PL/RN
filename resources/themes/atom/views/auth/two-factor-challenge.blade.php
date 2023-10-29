@@ -1,14 +1,14 @@
 <x-app-layout>
-    @push('title', __('Two factor challenge'))
+    @push('title', __('Twee-stapsverificatie'))
 
     <div class="col-span-12 lg:px-[250px] flex flex-col gap-y-3">
         <x-content.content-card icon="hotel-icon" classes="border dark:border-gray-900">
             <x-slot:title>
-                {{ __('Two-factor verification') }}
+                {{ __('Twee-stapsverificatie') }}
             </x-slot:title>
 
             <x-slot:under-title>
-                {{ __('Enter your 2-factor authentication code provided on your by the authentication app on your mobile phone.') }}
+                {{ __('Voer de 2FA-code in die je hebt gekregen van de authenticator-app op je mobiele telefoon.') }}
             </x-slot:under-title>
 
             <form action="/two-factor-challenge" method="POST">
@@ -19,13 +19,13 @@
                         {{ __('Code') }}
 
                         <x-slot:info>
-                            {{ __('Enter the code from your authentication app') }}
+                            {{ __('Vul de code in uit je app.') }}
                         </x-slot:info>
                     </x-form.label>
 
                     <x-form.input name="code" placeholder="{{ __('Code') }}" :autofocus="true" />
                     <small onclick="toggleRecoveryCodeField()"
-                        class="italic text-gray-600 hover:cursor-pointer hover:underline">{{ __('Lost access to your 2FA codes? Click here to use a recovery code') }}</small>
+                        class="italic text-gray-600 hover:cursor-pointer hover:underline">{{ __('Geen toegang meer tot je 2FA-codes? Klik hier om een recovery code te gebruiken') }}</small>
                 </div>
 
                 <div id="recoveryCode">
@@ -33,18 +33,18 @@
                         {{ __('Recovery code') }}
 
                         <x-slot:info>
-                            {{ __('In case you dont have access to your two-factor authentication code, you can use one of your recovery codes.') }}
+                            {{ __('Als je geen toegang hebt tot je 2FA-code, kunt je een van je recovery codes gebruiken.') }}
                         </x-slot:info>
                     </x-form.label>
 
                     <x-form.input name="recovery_code" :required="false" placeholder="{{ __('Recovery code') }}" />
                     <small onclick="toggleRecoveryCodeField()"
-                        class="italic text-gray-600 hover:cursor-pointer hover:underline">{{ __('Regained access to your 2FA codes? Click here to use your authentication app') }}</small>
+                        class="italic text-gray-600 hover:cursor-pointer hover:underline">{{ __('Heb je weer toegang tot je 2FA-codes? Klik hier om uw authenticator-app te gebruiken') }}</small>
                 </div>
 
                 <div class="flex justify-end">
                     <x-form.secondary-button classes="md:w-1/4 mt-4">
-                        {{ __('Confirm 2FA') }}
+                        {{ __('Bevestig 2FA') }}
                     </x-form.secondary-button>
                 </div>
             </form>

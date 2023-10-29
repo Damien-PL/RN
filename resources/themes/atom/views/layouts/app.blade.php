@@ -26,7 +26,7 @@
 <body class="flex min-h-screen flex-col site-bg dark:bg-gray-800">
     @if(config('habbo.site.debug_mode_enabled') && config('habbo.site.site_environment') === 'production')
         <div class="w-full py-2 px-4 text-center rounded text-white bg-red-500">
-            {{ __('It seems like debug mode is enabled while being in production. It is heavily recommended too set APP_DEBUG in the .env file to false in production mode') }}
+            {{ __('Je debug staat nog aan, Damien. Als het hotel draait, moet je deze ff uitzetten') }}
         </div>
     @endif
 

@@ -18,7 +18,7 @@
 <div id="dropdownNavbarUser" class="z-10 block hidden w-44 bg-white py-2 shadow dark:bg-gray-800">
     <a href="{{ route('settings.account.show') }}"
         class="block px-4 py-2 font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">
-        {{ __('User settings') }}
+        {{ __('Gebruikersinstellingen') }}
     </a>
 
     @auth
@@ -26,7 +26,7 @@
             class="block px-4 py-2 font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200"
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
-            {{ __('Logout') }}
+            {{ __('Uitloggen') }}
         </a>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">

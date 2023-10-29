@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ setting('hotel_name') }} - Nitro</title>
+    <title>{{ setting('hotel_name') }} - Webversie</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
 
@@ -19,7 +19,7 @@
                 <x-icons.home />
             </x-client.client-button>
         </a>
-
+ 
         <div onclick="reloadClient()">
             <x-client.client-button>
                 <x-icons.reload />
@@ -47,19 +47,19 @@
 
         <div class="relative flex h-full w-full flex-col items-center justify-center gap-4">
             <h2 class="text-2xl text-white">
-                {{ __('Whoops! It seems like you have been disconnected...') }}
+                {{ __('Oeps! Je bent het hotel uit gewaaid.') }}
             </h2>
 
             <div class="flex gap-x-4">
                 <button
                     class="py-2 px-4 text-white rounded bg-[#eeb425] hover:bg-[#e3aa1e] border-2 border-[#cf9d15] transition ease-in-out"
                     onclick="reloadClient()">
-                    {{ __('Reload client') }}
+                    {{ __('Hotel Herladen') }}
                 </button>
 
                 <a href="{{ route('me.show') }}">
                     <x-form.secondary-button>
-                        {{ __('Back to website') }}
+                        {{ __('Terug Naar Homepage') }}
                     </x-form.secondary-button>
                 </a>
             </div>

@@ -1,5 +1,5 @@
 <x-app-layout>
-    @push('title', __('Create account'))
+    @push('title', __('Account aanmaken'))
 
     <!-- Validation Errors -->
     <x-messages.flash-messages />
@@ -8,20 +8,20 @@
         <div class="lg:px-[250px]">
             <x-content.content-card icon="hotel-icon" classes="flex flex-col">
                 <x-slot:title>
-                    {{ __('Login to :hotel', ['hotel' => setting('hotel_name')]) }}
+                    {{ __('Inloggen bij :hotel', ['hotel' => setting('hotel_name')]) }}
                 </x-slot:title>
 
                 <x-slot:under-title>
-                    {{ __('Login to :hotel and take part in the most wonderful online world!', ['hotel' => setting('hotel_name')]) }}
+                    {{ __('Inloggen bij :hotel en neem deel aan de leukste online wereld!', ['hotel' => setting('hotel_name')]) }}
                 </x-slot:under-title>
 
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
 
-                    <div>
+                    <div> 
                         <div class="flex flex-col gap-y-2">
                             <x-form.label for="username">
-                                {{ __('Username') }}
+                                {{ __('Gebruikersnaam') }}
                             </x-form.label>
                         </div>
 
@@ -31,7 +31,7 @@
 
                     <div class="mt-4">
                         <x-form.label for="password">
-                            {{ __('Password') }}
+                            {{ __('Wachtwoord') }}
                         </x-form.label>
 
                         <x-form.input error-bag="register" name="password" type="password"
@@ -52,6 +52,8 @@
             </x-content.content-card>
         </div>
     </div>
+
+
 
     @if (setting('google_recaptcha_enabled'))
         @push('javascript')

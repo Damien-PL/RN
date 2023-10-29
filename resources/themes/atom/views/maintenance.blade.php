@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ setting('hotel_name') }} - {{ __('Maintenance') }}</title>
+    <title>{{ setting('hotel_name') }} - {{ __('Onderhoud') }}</title>
 
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" />
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
@@ -30,7 +30,7 @@
         <img src="{{ asset('assets/images/maintenance/pictures.png') }}" alt="{{ setting('hotel_name') }}">
 
         <div class="text-white">
-            <h1 class="text-center text-3xl font-semibold">{{ __('Maintenance') }}</h1>
+            <h1 class="text-center text-3xl font-semibold">{{ __('Onderhoud') }}</h1>
             <p class="text-center">{{ setting('maintenance_message') }}</p>
         </div>
 

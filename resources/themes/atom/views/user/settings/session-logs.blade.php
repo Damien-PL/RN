@@ -1,5 +1,5 @@
 <x-app-layout>
-    @push('title', __('Session logs'))
+    @push('title', __('Sessie logs'))
 
     <div class="col-span-12 flex flex-col gap-y-3 md:col-span-3">
         <x-user.settings.settings-navigation />
@@ -8,11 +8,11 @@
     <div class="col-span-12 flex flex-col gap-y-3 md:col-span-9">
         <x-content.content-card icon="hotel-icon" classes="border dark:border-gray-900">
             <x-slot:title>
-                {{ __('Session logs') }}
+                {{ __('Sessie logs') }}
             </x-slot:title>
 
             <x-slot:under-title>
-                {{ __('Keep an eye on all your active sessions') }}
+                {{ __('Houd al je actieve sessies in de gaten') }}
             </x-slot:under-title>
 
             <div class="overflow-hidden overflow-x-auto rounded border border-gray-200 dark:border-gray-700">
@@ -23,7 +23,7 @@
                                 {{ __('IP') }}
                             </th>
                             <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900 dark:text-white">
-                                {{ __('IP Current Device') }}
+                                {{ __('IP Huidig ​​Apparaat') }}
                             </th>
                             <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900 dark:text-white">
                                 {{ __('Is Desktop') }}
@@ -35,7 +35,7 @@
                                 {{ __('Browser') }}
                             </th>
                             <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900 dark:text-white">
-                                {{ __('Last Activity') }}
+                                {{ __('Laatste Activiteit') }}
                             </th>
                         </tr>
                     </thead>
@@ -60,7 +60,7 @@
                             <tr>
                                 <td class="whitespace-nowrap px-4 py-2 text-center text-gray-700 dark:text-gray-300"
                                     colspan="3">
-                                    {{ __('No session logs found') }}
+                                    {{ __('Geen sessie logs gevonden') }}
                                 </td>
                             </tr>
                         @endforelse

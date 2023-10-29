@@ -1,9 +1,9 @@
 <x-app-layout>
-    @push('title', 'Create a ticket')
+    @push('title', 'Maak een ticket')
 
     <x-content.content-card icon="chat-icon" classes="border dark:border-gray-900 dark:text-gray-100 col-span-12">
         <x-slot:title>
-           {{ __('All tickets') }}
+           {{ __('Alle tickets') }}
         </x-slot:title>
 
         <div class="overflow-hidden overflow-x-auto rounded border border-gray-200 dark:border-gray-700">
@@ -11,16 +11,16 @@
                 <thead class="bg-gray-100 dark:bg-gray-800">
                 <tr>
                     <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900 dark:text-white">
-                        {{ __('Title') }}
+                        {{ __('Titel') }}
                     </th>
                     <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900 dark:text-white">
-                        {{ __('Author') }}
+                        {{ __('Aanmaker') }}
                     </th>
                     <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900 dark:text-white">
                         {{ __('Status') }}
                     </th>
                     <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900 dark:text-white">
-                        {{ __('Actions') }}
+                        {{ __('Acties') }}
                     </th>
                 </tr>
                 </thead>
@@ -68,7 +68,7 @@
                     <tr>
                         <td class="whitespace-nowrap px-4 py-2 text-center text-gray-700 dark:text-gray-300"
                             colspan="3">
-                            {{ __('No tickets available') }}
+                            {{ __('Geen tickets beschikbaar') }}
                         </td>
                     </tr>
                 @endforelse

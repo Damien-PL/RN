@@ -5,7 +5,7 @@
             <div x-show="isAuthenticated"
                 class="px-2 hover:scale-110 transition-all font-semibold h-8 flex items-center justify-center border-2 text-xs border-yellow-400 cursor-pointer bg-[#eeb425] text-white rounded-lg"
                 x-on:click="open = true">
-                {{ __('Add') }}
+                {{ __('Toevoegen') }}
             </div>
 
             <template x-for="articleReaction in articleReactions">
@@ -48,7 +48,7 @@
             <x-modals.regular-modal>
                 <x-slot name="title">
                     <h2 class="text-2xl">
-                        {{ __('Insert Reaction') }}
+                        {{ __('Typ een reactie...') }}
                     </h2>
                 </x-slot>
 

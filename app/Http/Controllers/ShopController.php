@@ -51,20 +51,20 @@ class ShopController extends Controller
         $user = Auth::user();
         if ($package->give_rank && $user->rank >= $package->give_rank) {
             return to_route('shop.index')->withErrors(
-                ['message' => __('You are already this or a higher rank')],
+                ['message' => __('Je hebt al deze rank, of zelfs hoger!')],
             );
         }
 
         if ($user->website_balance < $package->price()) {
             return to_route('shop.index')->withErrors(
-                ['message' => __('You need to top-up your account with another $:amount to purchase this package', ['amount' => ($package->price() - $user->website_balance)])],
+                ['message' => __('Je hebt niet genoeg saldo. Je hebt nog €:amount nodig om dit pakket te kopen.', ['amount' => ($package->price() - $user->website_balance)])],
             );
         }
 
         $rcon = app(RconService::class);
         if (!$rcon->isConnected && $user->online === '1') {
             return to_route('shop.index')->withErrors(
-                ['message' => __('Pleaase logout before purchasing a package')],
+                ['message' => __('Graag eerst even uitloggen voor je een pakket koopt.')],
             );
         }
 
@@ -73,7 +73,7 @@ class ShopController extends Controller
 
             $sendCurrency->execute($user, 'credits', $package->credits);
             $sendCurrency->execute($user, 'duckets', $package->duckets);
-            $sendCurrency->execute($user, 'diamonds', $package->diamonds);
+            $sendCurrency->execute($user, 'druppels', $package->diamonds);
 
             if ($package->give_rank) {
                 if ($rcon->isConnected) {
@@ -95,7 +95,7 @@ class ShopController extends Controller
             }
         });
 
-        return to_route('shop.index')->with('success', __('Successful!'));
+        return to_route('shop.index')->with('success', __('Gelukt!'));
     }
 
     public function handleFurniture(array $furniture)

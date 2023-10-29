@@ -35,7 +35,7 @@
                         <p>{{ $room->owner?->username ?? 'Unknown' }}</p>
                     </a>
                     <p class="leading-5">
-                        <span class="font-semibold">{{ __('Description:') }} </span>
+                        <span class="font-semibold">{{ __('Omschrijving:') }} </span>
                         {{ $room->description }}
                     </p>
                 </div>
@@ -46,13 +46,13 @@
                     <div class="shadow border dark:border-gray-900">
                         <div class="flex gap-x-2 rounded-t border-b bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-900">
                             <p class="font-semibold text-black dark:text-white">
-                                {{ __('Room details') }}
+                                {{ __('Kamer details') }}
                             </p>
                         </div>
 
                         <section class="rounded-b bg-white p-3 dark:bg-gray-800 dark:text-white">
                             <p>
-                                <span class="font-semibold">{{ __('Max users:') }} </span>
+                                <span class="font-semibold">{{ __('Max gebruikers:') }} </span>
                                 {{ $room->users_max }}
                             </p>
                             @if (strlen($room->tags) > 0)
@@ -70,7 +70,7 @@
                     @if ($room->guild !== null)
                         <x-content.content-card icon="{{ $room->guild->badge }}-icon" classes="border dark:border-gray-900">
                             <x-slot:title>
-                                {{ __('The room guild') }}
+                                {{ __('De kamer gilde') }}
                             </x-slot:title>
 
                             <x-slot:under-title>

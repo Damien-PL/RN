@@ -10,7 +10,7 @@
     <div class="flex justify-between dark:text-white">
 
         <div class="flex flex-col">
-            <p class="font-semibold">{{ __('You will receive:') }}</p>
+            <p class="font-semibold">{{ __('Je krijgt:') }}</p>
 
             <ul class="list-disc pl-4">
                 @if($article->features)
@@ -31,7 +31,7 @@
                 @endif
 
                 @if ($article->diamonds)
-                    <li class="ml-3">{{ number_format($article->diamonds, 0, '.', '.') }} diamonds</li>
+                    <li class="ml-3">{{ number_format($article->diamonds, 0, '.', '.') }} druppels</li>
                 @endif
 
                 @if ($article->rank)
@@ -100,7 +100,7 @@
 
             <button type="submit"
                     class="w-full rounded bg-green-600 hover:bg-green-700 text-white p-2 border-2 border-green-500 transition ease-in-out duration-150 font-semibold">
-                {{ __('Buy for $:cost', ['cost' => $article->price()]) }}
+                {{ __('Koop voor €:cost', ['cost' => $article->price()]) }}
             </button>
         </form>
     </div>

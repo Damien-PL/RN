@@ -1,9 +1,9 @@
 <x-app-layout>
-    @push('title', __('Banned'))
+    @push('title', __('Verbannen'))
     <div class="col-span-12 flex justify-center">
         <div class="space-y-4 lg:w-1/2">
             <div class="w-full rounded-md bg-red-500 p-2 text-center text-white">
-                {{ __('It seems like you are banned off :hotel', ['hotel' => setting('hotel_name')]) }}
+                {{ __('Zo te zien ben je verbannen van :hotel', ['hotel' => setting('hotel_name')]) }}
             </div>
 
             <div class="rounded-md p-2 shadow">
@@ -15,17 +15,17 @@
                             </p>
 
                             <p>
-                                <strong>{{ __('Ban reason:') }}</strong> {{ $ban->ban_reason }}
+                                <strong>{{ __('Reden van ban:') }}</strong> {{ $ban->ban_reason }}
                             </p>
 
                             <p>
-                                <strong>{{ __('Ban expiration:') }}</strong> {{ date('Y/m/d', $ban->ban_expire) }}
+                                <strong>{{ __('Je bent weer welkom over:') }}</strong> {{ date('Y/m/d', $ban->ban_expire) }}
                             </p>
                         </div>
 
                         <div class="mt-4 max-w-[380px]">
                             <p class="mb-4">
-                                {{ __('If you believe this is a mistake, please reach out to one of our staff members through our Discord server!') }}
+                                {{ __('Als je deze verbanning niet terecht vindt of denkt dat het een fout is, neem dan contact met ons op via onze helpdesk!') }}
                             </p>
 
                             <a href="{{ setting('discord_invitation_link') }}" target="_blank">

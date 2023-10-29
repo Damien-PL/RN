@@ -22,14 +22,14 @@
                 <!-- Email Address -->
                 <div class="mt-4">
                     <label class="block text-sm font-medium text-gray-700">
-                        {{ __('Email') }}
+                        {{ __('E-mail') }}
                     </label>
 
                     <input id="email" type="email"
                         class="form-input w-full @error('email') border-red-500 @enderror" name="email"
                         value="{{ old('email', $request->email) }}" required autocomplete="email">
 
-                    @error('email')
+                    @error('e-mail')
                         <p class="mt-1 text-xs italic text-red-500">
                             {{ $message }}
                         </p>
@@ -39,14 +39,14 @@
                 <!-- Password -->
                 <div class="mt-4">
                     <label class="block text-sm font-medium text-gray-700">
-                        {{ __('Password') }}
+                        {{ __('Wachtwoord') }}
                     </label>
 
                     <input id="password" type="password"
                         class="form-input w-full @error('password') border-red-500 @enderror" name="password" required
                         autocomplete="new-password">
 
-                    @error('password')
+                    @error('wachtwoord')
                         <p class="mt-1 text-xs italic text-red-500">
                             {{ $message }}
                         </p>
@@ -56,7 +56,7 @@
                 <!-- Confirm Password -->
                 <div class="mt-4">
                     <label class="block text-sm font-medium text-gray-700">
-                        {{ __('Confirm Password') }}
+                        {{ __('Bevestig Wachtwoord') }}
                     </label>
 
                     <input id="password-confirm" type="password" class="w-full form-input" name="password_confirmation"
@@ -66,7 +66,7 @@
                 <div class="mt-4 flex items-center justify-end">
                     <button type="submit"
                         class="ml-4 inline-flex items-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white ring-gray-300 transition duration-150 ease-in-out hover:bg-gray-700 focus:border-gray-900 focus:outline-none focus:ring active:bg-gray-900 disabled:opacity-25">
-                        {{ __('Reset Password') }}
+                        {{ __('Reset Wachtwoord') }}
                     </button>
                 </div>
             </form>

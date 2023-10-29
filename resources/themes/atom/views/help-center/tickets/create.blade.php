@@ -1,13 +1,13 @@
 <x-app-layout>
-    @push('title', 'Create a ticket')
+    @push('title', 'Maak een ticket aan')
 
     <x-content.content-card icon="chat-icon" classes="border dark:border-gray-900 col-span-12 lg:col-span-9">
         <x-slot:title>
-            {{ __('Create a ticket') }}
+            {{ __('Maak ticket') }}
         </x-slot:title>
 
         <x-slot:under-title>
-            {{ __('Please describe your request below') }}
+            {{ __('Beschrijf hieronder je verzoek') }}
         </x-slot:under-title>
 
         <form action="{{ route('help-center.ticket.store') }}" method="POST">
@@ -24,17 +24,19 @@
 
             <div class="mt-4 no-tailwind">
                 <x-form.label for="password_confirmation">
-                    {{ __('Title') }}
+                    {{ __('Titel') }}
                 </x-form.label>
 
                 <x-form.input name="title" type="text"
-                              placeholder="{{ __('Enter a title for your ticket') }}"/>
+                              placeholder="{{ __('Voer een titel in voor je ticket.') }}"/>
             </div>
 
             <x-form.wysiwyg-editor/>
+            <script src="https://cdn.tiny.cloud/1/fa7ijikc8xqytumo15wkghzdqyu613i1b1knthfoi05twpsr/6/tinymce.min.js" referrerpolicy="origin"></script>
+
 
             <x-form.secondary-button type="submit" classes="mt-4">
-                {{ __('Submit ticket') }}
+                {{ __('Ticket indienen') }}
             </x-form.secondary-button>
         </form>
     </x-content.content-card>
@@ -47,7 +49,7 @@
             </x-slot:title>
 
             <x-slot:under-title>
-                {{ __('Your current open tickets') }}
+                {{ __('Je huidige open tickets') }}
             </x-slot:under-title>
 
 
@@ -68,7 +70,7 @@
                     </div>
                 @empty
                     <p>
-                        You currently have no open tickets.
+                    Je hebt momenteel geen open tickets.
                     </p>
 
                 @endforelse

@@ -1,5 +1,5 @@
 <x-app-layout>
-    @push('title', __('Account settings'))
+    @push('title', __('Accountinstellingen'))
 
     <div class="col-span-12 flex flex-col gap-y-3 md:col-span-3">
         <x-user.settings.settings-navigation />
@@ -8,11 +8,11 @@
     <div class="col-span-12 flex flex-col gap-y-3 md:col-span-9">
         <x-content.content-card icon="hotel-icon" classes="border dark:border-gray-900">
             <x-slot:title>
-                {{ __('Account settings') }}
+                {{ __('Accountinstellingen') }}
             </x-slot:title>
 
             <x-slot:under-title>
-                {{ __('Manage your account settings') }}
+                {{ __('Accountinstellingen beheren') }}
             </x-slot:under-title>
 
             <form action="{{ route('settings.account.update') }}" method="POST" class="flex flex-col gap-y-4">
@@ -24,7 +24,7 @@
                         {{ __('E-mail') }}
 
                         <x-slot:info>
-                            {{ __('Make sure to use an email that you remember, if you ever lose your password, your email will be required.') }}
+                            {{ __('Gebruik een bestaand e-mailadres. Als je ooit je wachtwoord vergeet, heb je deze nodig.') }}
                         </x-slot:info>
                     </x-form.label>
 
@@ -34,10 +34,10 @@
                 @if ($user->settings?->allow_name_change)
                     <div class="flex flex-col gap-y-1">
                         <x-form.label for="username">
-                            {{ __('Username') }}
+                            {{ __('Gebruikersnaam') }}
 
                             <x-slot:info>
-                                {{ __('Your username is what you and others will see in-game') }}
+                                {{ __('Je gebruikersnaam wordt de naam van je Rainy') }}
                             </x-slot:info>
                         </x-form.label>
 
@@ -50,7 +50,7 @@
                         {{ __('Motto') }}
 
                         <x-slot:info>
-                            {{ __('Spice up your profile with a nice motto') }}
+                            {{ __('Fleur je profiel op met een leuk motto') }}
                         </x-slot:info>
                     </x-form.label>
 
@@ -59,7 +59,7 @@
 
                 <div class="flex w-full justify-start md:justify-end">
                     <x-form.secondary-button classes="lg:w-1/4">
-                        {{ __('Update settings') }}
+                        {{ __('Instellingen opslaan') }}
                     </x-form.secondary-button>
                 </div>
             </form>

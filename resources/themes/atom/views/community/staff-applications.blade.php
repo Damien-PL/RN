@@ -22,12 +22,12 @@
                     <div class="flex justify-between">
                         @if (auth()->user()->hasAppliedForPosition($position->permission->id))
                             <x-form.danger-button>
-                                {{ __('You have already applied for :position', ['position' => $position->permission->rank_name]) }}
+                                {{ __('Je hebt al gesolliciteert als :position', ['position' => $position->permission->rank_name]) }}
                             </x-form.danger-button>
                         @else
                             <a href="{{ route('staff-applications.show', $position) }}" class="w-full">
                                 <x-form.secondary-button>
-                                    {{ __('Apply for :position', ['position' => $position->permission->rank_name]) }}
+                                    {{ __('Solliciteer als :position', ['position' => $position->permission->rank_name]) }}
                                 </x-form.secondary-button>
                             </a>
                         @endif
@@ -36,16 +36,16 @@
             @empty
                 <x-content.content-card icon="lighthouse-icon" classes="border dark:border-gray-900 col-span-full">
                     <x-slot:title>
-                        {{ __('No positions open') }}
+                        {{ __('Geen vacatures') }}
                     </x-slot:title>
 
                     <x-slot:under-title>
-                        {{ __('There is currently no positions open') }}
+                        {{ __('We zijn op dit moment niet opzoek naar nieuwe collegas') }}
                     </x-slot:under-title>
 
                     <div class="px-2 text-sm space-y-4 dark:text-gray-200">
                         <p>
-                            {{ __('Please come back at a later time to check if we have any positions open by then! Thank you for your interest.', ['hotel' => setting('hotel_name')]) }}
+                            {{ __('Kom op een later moment terug om te kijken of er nieuwe vacatures zijn. Bedankt voor je interesse!', ['hotel' => setting('hotel_name')]) }}
                         </p>
                     </div>
                 </x-content.content-card>
@@ -56,16 +56,16 @@
     <div class="col-span-12 lg:col-span-3 lg:w-[110%] space-y-4 lg:-ml-[32px]">
         <x-content.content-card icon="chat-icon" classes="border dark:border-gray-900">
             <x-slot:title>
-                {{ __('Apply for :hotel staff', ['hotel' => setting('hotel_name')]) }}
+                {{ __('Solliciteer als :hotel staff', ['hotel' => setting('hotel_name')]) }}
             </x-slot:title>
 
             <x-slot:under-title>
-                {{ __('Select position to get started', ['hotel' => setting('hotel_name')]) }}
+                {{ __('Selecteer een functie om te beginnen', ['hotel' => setting('hotel_name')]) }}
             </x-slot:under-title>
 
             <div class="px-2 text-sm space-y-4 dark:text-gray-200">
                 <p>
-                    {{ __('Here at :hotel we open up for staff applications every now and then. Sometimes you will find this page empty other times it might be filled with positions, if you ever come across a position you feel you would fit perfectly into, then do not hesitate to apply for it.', ['hotel' => setting('hotel_name')]) }}
+                    {{ __('Bij :hotel hebben we zo nu en dan vacatures open. Sometimes you will find this page empty other times it might be filled with positions, if you ever come across a position you feel you would fit perfectly into, then do not hesitate to apply for it.', ['hotel' => setting('hotel_name')]) }}
                 </p>
             </div>
         </x-content.content-card>

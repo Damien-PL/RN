@@ -6,7 +6,7 @@
         <div class="relative flex h-full w-full max-w-7xl items-center justify-center pr-10 md:justify-between">
             <div class="flex items-center gap-x-4">
                 <a href="{{ route('me.show') }}" class="ml-7">
-                    <img class="drop-shadow transition duration-300 ease-in-out hover:scale-105"
+                    <img class="transition duration-300 ease-in-out hover:scale-105"
                         src="{{ setting('cms_logo') }}" alt="Hotel logo">
                 </a>
 
@@ -15,7 +15,7 @@
                     <div class="absolute -left-1 h-6 w-6 rotate-45 bg-white dark:bg-gray-900"></div>
 
                     <span class="relative">
-                        {{ __(':online :hotel online', ['online' => DB::table('users')->where('online', '1')->count(),'hotel' => setting('hotel_name')]) }}
+                        {{ __(':online Gebruikers online', ['online' => DB::table('users')->where('online', '1')->count(),'hotel' => setting('hotel_name')]) }}
                     </span>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                 <a data-turbolinks="false" href="{{ route('nitro-client') }}">
                     <button
                         class="relative hidden rounded-full bg-white bg-opacity-90 px-6 py-2 text-lg font-semibold text-black transition duration-300 ease-in-out hover:bg-opacity-100 dark:bg-gray-900 dark:text-white md:block">
-                        {{ __('Nitro client') }}
+                        {{ __('Ga naar RainyNight') }}
                     </button>
                 </a>
 
@@ -45,7 +45,7 @@
             <div class="flex justify-center">
                 <div class="text-white font-semibold flex-col md:w-[600px]">
                     <p class="hidden text-center text-xl md:block">
-                        {{ __('An online virtual world where you can create your own avatar, make friends, chat, create rooms and much more!') }}
+                        {{ __('Een online virtueel hotel waar je vrienden zal maken, de mooiste kamers kunt bouwen en nog veel meer!') }}
                     </p>
 
                     <div class="flex flex-col items-center justify-center gap-x-6 gap-y-4 md:mt-6 md:flex-row md:gap-y-0">
@@ -54,12 +54,12 @@
                             {{ __('Login') }}
                         </button>
 
-                        <p class="text-sm uppercase text-opacity-80">{{ __('Or') }}</p>
+                        <p class="text-sm uppercase text-opacity-80">{{ __('Of') }}</p>
 
                         <a href="{{ route('register') }}">
                             <button
                                 class="uppercase bg-green-600 bg-opacity-80 px-8 py-2.5 rounded-full transition ease-in-out duration-200 hover:bg-opacity-100">
-                                {{ __('Create an account') }}
+                                {{ __('Registreren') }}
                             </button>
                         </a>
                     </div>

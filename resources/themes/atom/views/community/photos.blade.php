@@ -1,14 +1,14 @@
 <x-app-layout>
-    @push('title', __('Photos'))
+    @push('title', __('Foto`s'))
 
     <div class="col-span-12">
         <x-content.content-card icon="camera-icon">
             <x-slot:title>
-                {{ __('Latest Photos') }}
+                {{ __('Recente Foto`s') }}
             </x-slot:title>
 
             <x-slot:under-title>
-                {{ __('Have a look at some of the great moments captured by users around the hotel.') }}
+                {{ __('Hier vind je de mooiste foto`s, gemaakt door onze spelers!') }}
             </x-slot:under-title>
 
             <x-photos :photos="$photos" />

@@ -3,7 +3,7 @@
     onclick="showFooter()">
     <div class="md:font-semibold text-[12px] md:text-[14px] cursor-pointer hover:underline">
         &copy {{ date('Y') }} -
-        {{ __(':hotel is a not for profit educational project', ['hotel' => setting('hotel_name')]) }}
+        {{ __('Welkom bij :hotel Hotel!', ['hotel' => setting('hotel_name')]) }}
     </div>
 </footer>
 
@@ -40,7 +40,7 @@
             '<strong>Twana & Zaruzet</strong> Norwegian translations <br/>'
         ];
         const content =
-            '{{ __('Thank you for playing :hotel. We have put a lot of effort into making the hotel what it is, and we truly appreciate you being here', ['hotel' => setting('hotel_name')]) }}' + '❤️';
+            '{{ __('Bedankt voor het spelen van :hotel. We hebben veel moeite gestoken in het maken van het hotel tot wat het is, en we zijn enorm blij dat je er bent', ['hotel' => setting('hotel_name')]) }}' + '❤️';
         const drivenBy = '{{ __(':hotel is driven by Atom CMS made by:', ['hotel' => setting('hotel_name')]) }}';
 
         Swal.fire(

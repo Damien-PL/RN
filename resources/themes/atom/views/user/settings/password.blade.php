@@ -1,5 +1,5 @@
 <x-app-layout>
-    @push('title', __('Password settings'))
+    @push('title', __('Wachtwoord instellingen'))
 
     <div class="col-span-12 flex flex-col gap-y-3 md:col-span-3">
         <x-user.settings.settings-navigation />
@@ -8,11 +8,11 @@
     <div class="col-span-12 flex flex-col gap-y-3 md:col-span-9">
         <x-content.content-card icon="hotel-icon" classes="border dark:border-gray-900">
             <x-slot:title>
-                {{ __('Password settings') }}
+                {{ __('Wachtwoord instellingen') }}
             </x-slot:title>
 
             <x-slot:under-title>
-                {{ __('Change your password by filling out the fields below') }}
+                {{ __('Verander je wachtwoord door onderstaande velden in te vullen') }}
             </x-slot:under-title>
 
             <form action="{{ route('settings.password.update') }}" method="POST" class="flex flex-col gap-y-4">
@@ -21,10 +21,10 @@
 
                 <div class="flex flex-col gap-y-1">
                     <x-form.label for="current_password">
-                        {{ __('Current password') }}
+                        {{ __('Huidig wachtwoord') }}
 
                         <x-slot:info>
-                            {{ __('Enter your current password') }}
+                            {{ __('Voer je huidige wachtwoord in') }}
                         </x-slot:info>
                     </x-form.label>
 
@@ -33,10 +33,10 @@
 
                 <div class="flex flex-col gap-y-1">
                     <x-form.label for="password">
-                        {{ __('New password') }}
+                        {{ __('Nieuw wachtwoord') }}
 
                         <x-slot:info>
-                            {{ __('Enter a new secure password. Do not forget to save it somewhere safe') }}
+                            {{ __('Voer een veilig nieuw wachtwoord in.') }}
                         </x-slot:info>
                     </x-form.label>
 
@@ -45,10 +45,10 @@
 
                 <div class="flex flex-col gap-y-1">
                     <x-form.label for="password_confirmation">
-                        {{ __('Confirm new password') }}
+                        {{ __('Bevestig nieuw wachtwoord') }}
 
                         <x-slot:info>
-                            {{ __('Please confirm your new password') }}
+                            {{ __('Bevestig je nieuwe wachtwoord') }}
                         </x-slot:info>
                     </x-form.label>
 
@@ -57,7 +57,7 @@
 
                 <div class="flex w-full justify-start md:justify-end">
                     <x-form.secondary-button classes="lg:w-1/4">
-                        {{ __('Update password') }}
+                        {{ __('Wachtwoord opslaan') }}
                     </x-form.secondary-button>
                 </div>
             </form>

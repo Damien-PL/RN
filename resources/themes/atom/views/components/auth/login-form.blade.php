@@ -1,7 +1,7 @@
 <x-slot name="title">
-    <h2 class="text-2xl font-semibold">{{ __('Hello!') }}</h2>
+    <h2 class="text-2xl font-semibold">{{ __('Hallo!') }}</h2>
     <p class="dark:text-gray-400">
-        {{ __('There is currently :online users online', ['online' => DB::table('users')->where('online', '1')->count()]) }}
+        {{ __('Er zijn op dit moment :online Rainys online', ['online' => DB::table('users')->where('online', '1')->count()]) }}
     </p>
 </x-slot>
 
@@ -10,7 +10,7 @@
 
     <div>
         <x-form.label for="username">
-            {{ __('Username') }}
+            {{ __('Gebruikersnaam') }}
         </x-form.label>
 
         <x-form.input error-bag="login" name="username" value="{{ old('username') }}" placeholder="{{ __('Username') }}"
@@ -19,7 +19,7 @@
 
     <div>
         <x-form.label for="password">
-            {{ __('Password') }}
+            {{ __('Wachtwoord') }}
         </x-form.label>
 
         <x-form.input error-bag="login" name="password" placeholder="{{ __('Password') }}" type="password" />
@@ -30,12 +30,13 @@
     @endif
 
     <x-form.primary-button>
-        {{ __('Login') }}
+        {{ __('Log in') }}
     </x-form.primary-button>
 
     <div class="text-center text-sm font-semibold text-gray-700 dark:text-gray-400">
         <a href="{{ route('register') }}" class="hover:underline" x-on:click="open = false">
-            {{ __('Dont have an account? Join now!') }}
+            {{ __('Nog geen account? Registreer nu!') }}
         </a>
+        
     </div>
 </form>

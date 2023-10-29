@@ -116,6 +116,8 @@ Route::middleware(['maintenance', 'check.ban', 'force.staff.2fa'])->group(functi
 
         // Leaderboard routes
         Route::get('/leaderboard', LeaderboardController::class)->name('leaderboard.index');
+        Route::get('/leaderboard2', LeaderboardController::class)->name('leaderboard2.index');
+
 
         // Shop routes
         Route::prefix('shop')->group(function () {

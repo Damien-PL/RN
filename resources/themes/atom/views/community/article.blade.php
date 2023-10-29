@@ -10,8 +10,8 @@
             </div>
 
             <div class="h-[65%] w-full staff-bg"
-                style="background: rgba(0, 0, 0, 0.5) url({{ asset(sprintf('assets/images/%s', $article->user ? $article->user->permission->staff_background ?? 'staff-bg.png'  : 'staff-bg.png')) }});">
-            </div>
+    style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{ asset(sprintf('assets/images/%s', $article->user ? $article->user->permission->staff_background ?? 'staff-bg.png'  : 'staff-bg.png')) }});">
+</div>
 
             <a href="{{ route('profile.show', $article->user ?? \App\Models\User::first()) }}" class="absolute top-4 left-1 drop-shadow">
                 <img style="image-rendering: pixelated;" class="transition duration-300 ease-in-out hover:scale-105"
@@ -37,11 +37,11 @@
 
         <x-content.content-card icon="article-icon" classes="border dark:bg-gray-800 dark:border-gray-900">
             <x-slot:title>
-                {{ __('Other articles') }}
+                {{ __('Andere artikelen') }}
             </x-slot:title>
 
             <x-slot:under-title>
-                {{ __('Our most recent articles') }}
+                {{ __('Meest recente artikelen') }}
             </x-slot:under-title>
 
             <div class="flex flex-col gap-y-2">
@@ -53,7 +53,7 @@
                     </a>
                 @empty
                     <p class="dark:text-gray-400">
-                        {{ __('There is currently no other articles') }}
+                        {{ __('Er zijn nog geen andere artikelen') }}
                     </p>
                 @endforelse
             </div>
@@ -83,11 +83,11 @@
             @if (auth()->check() && !$article->userHasReachedArticleCommentLimit())
                 <x-content.content-card icon="hotel-icon" classes="border dark:border-gray-900">
                     <x-slot:title>
-                        {{ __('Post a comment') }}
+                        {{ __('Geef een reactie') }}
                     </x-slot:title>
 
                     <x-slot:under-title>
-                        {{ __('Post a comment on the article, to let us know what you think about it') }}
+                        {{ __('Plaats een reactie om ons te laten weten wat je van het artikel vindt') }}
                     </x-slot:under-title>
 
                     <div class="px-2 text-sm dark:text-gray-200">
@@ -98,7 +98,7 @@
                                 class="focus:ring-0 border-2 border-gray-200 rounded dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200 focus:border-[#eeb425] w-full min-h-[100px] max-h-[100px] @error('comment') border-red-600 ring-red-500 @enderror"></textarea>
 
                             <x-form.primary-button classes="mt-2">
-                                {{ __('Post comment') }}
+                                {{ __('Plaats reactie') }}
                             </x-form.primary-button>
                         </form>
                     </div>
@@ -107,11 +107,11 @@
 
             <x-content.content-card icon="hotel-icon" classes="border dark:border-gray-900">
                 <x-slot:title>
-                    {{ __('Comments') }}
+                    {{ __('Reacties') }}
                 </x-slot:title>
 
                 <x-slot:under-title>
-                    {{ __('Below you will see all the comments, written on this article') }}
+                    {{ __('Hieronder vind je alle reacties op dit artikel') }}
                 </x-slot:under-title>
 
                 <div class="px-1 dark:text-gray-200 space-y-[13px]">

@@ -1,13 +1,13 @@
 <x-app-layout>
-    @push('title', 'Create a ticket')
+    @push('title', 'Maak een \ticket')
 
     <x-content.content-card icon="chat-icon" classes="border dark:border-gray-900 col-span-12 lg:col-span-9">
         <x-slot:title>
-            {{ __('Edit your ticket') }}
+            {{ __('Bewerk je ticket') }}
         </x-slot:title>
 
         <x-slot:under-title>
-            {{ __('Please describe your request below') }}
+            {{ __('Beschrijf hieronder je verzoek') }}
         </x-slot:under-title>
 
         <form action="{{ route('help-center.ticket.update', $ticket) }}" method="POST">
@@ -29,7 +29,7 @@
 
             <div class="mt-4 no-tailwind">
                 <x-form.label for="password_confirmation">
-                    {{ __('Title') }}
+                    {{ __('Titel') }}
                 </x-form.label>
 
                 <x-form.input name="title" type="text" value="{{ $ticket->title }}"
@@ -52,7 +52,7 @@
             </x-slot:title>
 
             <x-slot:under-title>
-                {{ __('Your current open tickets') }}
+                {{ __('Je huidige open tickets') }}
             </x-slot:under-title>
 
 
@@ -73,7 +73,7 @@
                     </div>
                 @empty
                     <p>
-                        You currently have no open tickets.
+                        Je hebt momenteel geen open tickets.
                     </p>
 
                 @endforelse

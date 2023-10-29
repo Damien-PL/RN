@@ -9,8 +9,22 @@
                 </x-navigation.dropdown-child>
 
                 <x-navigation.dropdown-child :route="route('profile.show', auth()->user()->username)">
-                    {{ __('My Profile') }}
+                    {{ __('Mijn Profiel') }}
                 </x-navigation.dropdown-child>
+                
+                <x-navigation.dropdown-child :route="route('settings.account.show')">
+                    {{ __('Profiel Instellingen') }}
+                </x-navigation.dropdown-child>
+            
+                <form method="POST" action="{{ route('logout') }}">
+    @csrf <!-- Add the CSRF token for security -->
+    <x-navigation.dropdown-child>
+        <button type="submit">{{ __('Log Uit') }}</button>
+    </x-navigation.dropdown-child>
+</form>
+
+            
+            
             </x-slot:children>
         </x-navigation.dropdown>
     @else
@@ -26,7 +40,7 @@
 
         <x-slot:children>
             <x-navigation.dropdown-child :route="route('article.index')">
-                {{ __('Articles') }}
+                {{ __('Artikelen') }}
             </x-navigation.dropdown-child>
 
             <x-navigation.dropdown-child :route="route('staff.index') ">
@@ -38,25 +52,22 @@
             </x-navigation.dropdown-child>
 
             <x-navigation.dropdown-child :route="route('staff-applications.index')">
-                {{ __('Staff applications') }}
+                {{ __('Staff Vacatures') }}
             </x-navigation.dropdown-child>
 
-            <x-navigation.dropdown-child :route="route('photos.index')">
-                {{ __('Photos') }}
-            </x-navigation.dropdown-child>
         </x-slot:children>
     </x-navigation.dropdown>
 
     <a href="{{ route('leaderboard.index') }}"
        class="nav-item dark:text-gray-200 {{ request()->routeIs('leaderboard.*') ? 'md:border-b-4 md:border-b-[#eeb425]' : '' }}">
         <i class="navigation-icon leaderboards mr-1 hidden lg:inline-flex"></i>
-        {{ __('Leaderboards') }}
+        {{ __('Statistieken') }}
     </a>
 
     <a href="{{ route('values.index') }}"
        class="nav-item dark:text-gray-200 {{ request()->routeIs('values.*') ? 'md:border-b-4 md:border-b-[#eeb425]' : '' }}">
         <i class="navigation-icon leaderboards mr-1 hidden lg:inline-flex"></i>
-        {{ __('Rare values') }}
+        {{ __('Ruilwaarden') }}
     </a>
 
     <a href="{{ route('shop.index') }}"
@@ -66,11 +77,11 @@
     </a>
 
         <x-navigation.dropdown icon="rules" route-group="help-center*" :uppercase="true">
-            {{ __('Assistance') }}
+            {{ __('Assistentie') }}
 
             <x-slot:children>
                 <x-navigation.dropdown-child :route="route('help-center.index')">
-                    {{ __('Help center') }}
+                    {{ __('Help Centrum') }}
                 </x-navigation.dropdown-child>
 
                 @if(hasPermission('manage_website_tickets'))
@@ -80,7 +91,7 @@
                 @endif
 
                 <x-navigation.dropdown-child :route="route('help-center.rules.index')">
-                    {{ __('Rules') }}
+                    {{ __('Regels') }}
                 </x-navigation.dropdown-child>
             </x-slot:children>
         </x-navigation.dropdown>
@@ -88,11 +99,25 @@
     <a href="{{ setting('discord_invitation_link') }}" target="_blank" class="nav-item dark:text-gray-200">
         {{ __('Discord') }}
     </a>
+    
+    @if(hasPermission('view_server_logs') || hasPermission('housekeeping_access') || hasPermission('generate_logo'))
+            <x-navigation.dropdown classes="!text-red-700 !border-none">
+                {{ __('Administratie') }}
 
-    <div class="w-full flex md:hidden gap-x-1 justify-center">
-        <x-navigation.language-selector>
-            <img src="/assets/images/icons/flags/{{ session()->has('locale') ? session()->get('locale') : config('habbo.site.default_language') }}.png"
-                 alt="">
-        </x-navigation.language-selector>
-    </div>
-</div>
+                <x-slot:children>
+                    @if (hasPermission('view_server_logs'))
+                        <x-navigation.dropdown-child route="/log-viewer" :turbolink="false" target="_blank">
+                            {{ __('Error logs') }}
+                        </x-navigation.dropdown-child>
+                    @endif
+
+                    @if(hasPermission('housekeeping_access'))
+                        <a data-turbolinks="false" href="{{ setting('housekeeping_url') }}" target="_blank" class="dropdown-item dark:text-gray-200 dark:hover:bg-gray-700">
+                            {{ __('Housekeeping') }}
+                        </a>
+                    @endif
+                </x-slot:children>
+            </x-navigation.dropdown>
+        
+
+@endif

@@ -1,5 +1,5 @@
 <x-app-layout>
-    @push('title', __('Two factor'))
+    @push('title', __('Twee-stapverificatie'))
 
     <div class="col-span-12 flex flex-col gap-y-3 md:col-span-3">
         <x-user.settings.settings-navigation />
@@ -8,11 +8,11 @@
     <div class="col-span-12 flex flex-col gap-y-3 md:col-span-9">
         <x-content.content-card icon="hotel-icon" classes="border dark:border-gray-900">
             <x-slot:title>
-                {{ __('Confirm your password') }}
+                {{ __('Bevestig je wachtwoord') }}
             </x-slot:title>
 
             <x-slot:under-title>
-                {{ __('You must confirm your password to continue') }}
+                {{ __('Bevestig je wachtwoord om door te gaan') }}
             </x-slot:under-title>
 
             <form method="POST" action="/user/confirm-password">
@@ -22,10 +22,10 @@
                 <div class="flex flex-col gap-y-2">
                     <div>
                         <x-form.label for="password">
-                            {{ __('Password') }}
+                            {{ __('Wachtwoord') }}
 
                             <x-slot:info>
-                                {{ __('You must confirm your current password before being able to toggle 2FA.') }}
+                                {{ __('Bevestig je huidige wachtwoord om twee-stapsverificatie om te schakelen.') }}
                             </x-slot:info>
                         </x-form.label>
 
@@ -40,7 +40,7 @@
 
                 <div class="mt-4">
                     <x-form.primary-button>
-                        {{ __('Confirm password') }}
+                        {{ __('Bevestig wachtwoord') }}
                     </x-form.primary-button>
                 </div>
             </form>

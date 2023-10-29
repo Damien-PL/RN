@@ -1,5 +1,5 @@
 <x-app-layout>
-    @push('title', 'Create a ticket')
+    @push('title', 'Maak een ticket')
 
     <x-content.content-card icon="chat-icon" classes="border dark:border-gray-900 dark:text-gray-100 col-span-12 lg:col-span-9">
         <x-slot:title>
@@ -60,7 +60,7 @@
            </x-slot:title>
 
            <x-slot:under-title>
-               {{ __('Your current open tickets') }}
+               {{ __('Je huidige open tickets') }}
            </x-slot:under-title>
 
            <div class="flex flex-col gap-2">
@@ -80,7 +80,7 @@
                    </div>
                @empty
                    <p>
-                       You currently have no open tickets.
+                       Je hebt momenteel geen open tickets.
                    </p>
                @endforelse
            </div>
@@ -90,11 +90,11 @@
     <x-content.content-card icon="duo-chat-icon"
                             classes="border dark:border-gray-900 dark:text-gray-100 border dark:border-gray-900 dark:text-gray-100 col-span-12 lg:col-span-9 -mt-4">
         <x-slot:title>
-            {{ __('Comments') }}
+            {{ __('Commentaar') }}
         </x-slot:title>
 
         <x-slot:under-title>
-            {{ __('Please submit your reply below') }}
+            {{ __('Geef hieronder je reactie') }}
         </x-slot:under-title>
 
         @if($ticket->isOpen())
@@ -104,7 +104,7 @@
                 <x-form.wysiwyg-editor />
 
                 <x-form.secondary-button classes="mt-2">
-                    {{ __('Submit reply') }}
+                    {{ __('Reactie indienen') }}
                 </x-form.secondary-button>
             </form>
         @endif
@@ -177,7 +177,7 @@
                 @endif
             @empty
                 <p>
-                    {{ __('There is currently no replies') }}
+                    {{ __('Er zijn op dit moment geen reacties') }}
                 </p>
             @endforelse
         </div>

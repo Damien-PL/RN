@@ -1,15 +1,15 @@
 <x-app-layout>
-    @push('title', __('Welcome to the best hotel on the web!'))
+    @push('title', __('Welkom bij het leukste hotel op het internet!'))
 
     <div class="col-span-12 space-y-14">
         <div class="col-span-12">
             <x-content.guest-content-card icon="hotel-icon">
                 <x-slot:title>
-                    {{ __('Latest news') }}
+                    {{ __('Laatste Nieuws') }}
                 </x-slot:title>
 
                 <x-slot:under-title>
-                    {{ __('Keep up to date with the latest hotel gossip.') }}
+                    {{ __('Blijf up-to-date over de laatste roddels.') }}
                 </x-slot:under-title>
 
                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -22,22 +22,7 @@
             </x-content.guest-content-card>
         </div>
 
-        @if(count($photos))
-            <div class="col-span-12">
-                <x-content.guest-content-card icon="camera-icon">
-                    <x-slot:title>
-                        {{ __('Latest Photos') }}
-                    </x-slot:title>
-
-                    <x-slot:under-title>
-                        {{ __('Have a look at some of the great moments captured by users around the hotel.') }}
-                    </x-slot:under-title>
-
-                    <x-photos :photos="$photos" />
-                </x-content.guest-content-card>
-            </div>
-        @endif
-    </div>
+        
 
     @push('javascript')
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>

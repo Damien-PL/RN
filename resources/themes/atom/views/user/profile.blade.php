@@ -11,7 +11,7 @@
                         alt="">
 
                     <div class="flex flex-col">
-                        <h3 class="text-xl font-semibold">{{ __('My name is,') }}</h3>
+                        <h3 class="text-xl font-semibold">{{ __('Mijn naam is,') }}</h3>
                         <h2 class="text-4xl">
                             {{ $user->username }}
                         </h2>
@@ -22,32 +22,7 @@
 
                 <div
                     class="col-span-3 mt-4 grid w-full grid-cols-1 space-y-3 md:space-y-0 md:col-span-2 md:mt-0 md:grid-cols-3">
-                    <div
-                        class="rounded-lg md:rounded-none md:rounded-l-lg bg-[#f8ef2b] flex flex-col gap-y-2 items-center justify-center py-3 md:py-0">
-                        <img src="{{ asset('/assets/images/profile/credits.png') }}" alt="">
-
-                        <h4 class="text-[#b16d18] font-semibold text-2xl">
-                            {{ $user->credits }}
-                        </h4>
-                    </div>
-
-                    <div
-                        class="rounded-lg md:rounded-none bg-[#e99bdc] flex flex-col gap-y-2 items-center justify-center py-3 md:py-0">
-                        <img src="{{ asset('/assets/images/profile/duckets.png') }}" alt="">
-
-                        <h4 class="text-[#812378] font-semibold text-2xl">
-                            {{ $user->currency('duckets') }}
-                        </h4>
-                    </div>
-
-                    <div
-                        class="rounded-lg md:rounded-none md:rounded-r-lg bg-[#82d6db] flex flex-col gap-y-2 items-center justify-center py-3 md:py-0">
-                        <img src="{{ asset('/assets/images/profile/diamonds.png') }}" alt="">
-
-                        <h4 class="text-[#146867] font-semibold text-2xl">
-                            {{ $user->currency('diamonds') }}
-                        </h4>
-                    </div>
+                 
                 </div>
             </div>
 
@@ -71,7 +46,7 @@
                                 </div>
                             @empty
                                 <div class="col-span-4">
-                                    {{ __('It seems like :user has no badges.', ['user' => $user->username]) }}
+                                    {{ __(':user heeft nog geen badges.', ['user' => $user->username]) }}
                                 </div>
                             @endforelse
                         </div>
@@ -85,7 +60,7 @@
                         </x-slot:image>
 
                         <x-slot:title>
-                            {{ __('Groups') }}
+                            {{ __('Groepen') }}
                         </x-slot:title>
 
                         <div class="flex justify-between">
@@ -97,7 +72,7 @@
                                 </div>
                             @empty
                                 <div class="w-full">
-                                    {{ __('It seems like :user is not a member of any groups.', ['user' => $user->username]) }}
+                                    {{ __(':user is nog geen lid van een groep.', ['user' => $user->username]) }}
 
                                 </div>
                             @endforelse
@@ -114,7 +89,7 @@
                         </x-slot:image>
 
                         <x-slot:title>
-                            {{ __('Rooms') }}
+                            {{ __('Kamers') }}
                         </x-slot:title>
 
                         <div class="flex space-x-1 justify-between">
@@ -162,7 +137,7 @@
                                 </div>
                             @empty
                                 <div class="col-span-4">
-                                    {{ __('It seems like :user got no rooms.', ['user' => $user->username]) }}
+                                    {{ __(':user heeft nog geen kamers.', ['user' => $user->username]) }}
                                 </div>
                             @endforelse
                         </div>
@@ -176,7 +151,7 @@
                         </x-slot:image>
 
                         <x-slot:title>
-                            {{ __('Friends') }}
+                            {{ __('Vrienden') }}
                         </x-slot:title>
 
                         <div class="grid grid-cols-4 gap-2 xl:grid-cols-6 xl:pl-3">
@@ -190,7 +165,7 @@
                                 </a>
                             @empty
                                 <div class="col-span-6">
-                                    {{ __('It seems like :user has no friends.', ['user' => $user->username]) }}
+                                    {{ __(':user heeft nog geen vrienden.', ['user' => $user->username]) }}
                                 </div>
                             @endforelse
                         </div>

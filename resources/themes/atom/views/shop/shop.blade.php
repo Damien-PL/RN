@@ -4,40 +4,40 @@
     <div class="col-span-12">
         <x-modals.modal-wrapper>
             <div class="w-full py-2 px-4 text-center bg-[#f68b08] text-white rounded">
-                {{ __('Please make sure to read our shop') }}
-                <button class="text-white underline font-bold" x-on:click="open = true">{{ __('Terms & Conditions') }}</button>
-                {{ __('before making a purchase') }}
+                {{ __('Lees eerst de') }}
+                <button class="text-white underline font-bold" x-on:click="open = true">{{ __('Algemene Voorwaarden') }}</button>
+                {{ __('van onze shop, voordat je iets koopt.') }}
             </div>
 
             <x-modals.regular-modal>
                 <x-slot name="title">
                     <h2 class="text-2xl">
-                        {{ __('Shop Terms & Conditions') }}
+                        {{ __('Algemene Voorwaarden Shop') }}
                     </h2>
                 </x-slot>
 
                 <div class="space-y-3 p-2">
                     <p>
-                        {{ __('Here at :hotel Hotel we are accepting donations to keep the hotel up & running and as a thank you, you will in return receive in-game goods.', ['hotel' => setting('hotel_name')]) }}
+                        {{ __('Hier bij :hotel Hotel accepteren we donaties om het hotel draaiende te houden en als bedankje ontvang je daarvoor in-game items.', ['hotel' => setting('hotel_name')]) }}
                     </p>
 
                     <div class="flex flex-col gap-y-2 !mt-6">
-                        <p class="font-semibold">{{ __('Why are donations important?') }}</p>
+                        <p class="font-semibold">{{ __('Waarom zijn donaties voor ons belangrijk?') }}</p>
 
-                        <p>{{ __('Donations are important, as it will help to pay our monthly bills needed to keep the hotel up & running, as well as adding new and exciting features for you and others to enjoy!') }}</p>
+                        <p>{{ __('Donaties zijn belangrijk, omdat het helpt om de rekeningen te betalen die nodig zijn om het hotel draaiende te houden, en om nieuwe functies toe te voegen waar jij en anderen van kunnen genieten!') }}</p>
                     </div>
 
                     <div class="flex flex-col gap-y-2 !mt-6">
-                        <p class="font-semibold">{{ __('Our terms') }}</p>
+                        <p class="font-semibold">{{ __('Onze voorwaarden') }}</p>
 
-                        <p>{{ __('Once a donation has been made and received by us, it is non-refundable under any circumstances. The donated amount which is converted into website balance cannot be converted back into cash or other forms of money. By making a donation, you acknowledge and accept these terms and agree not to initiate a chargeback or dispute with your bank or card issuer.') }}</p>
+                        <p>{{ __('Zodra een donatie is gedaan en door ons is ontvangen, kan deze onder geen enkele omstandigheid worden gerestitueerd. Het gedoneerde bedrag wordt omgezet in websitesaldo en kan niet terug worden omgezet in contant geld of andere vormen van echt geld. Door een donatie te doen, erken en aanvaard je deze voorwaarden en ga je ermee akkoord geen terugvordering of geschil met je bank of kaartuitgever te starten.') }}</p>
                     </div>
 
                     <div class="flex flex-col gap-y-2 !mt-6">
-                        <p class="font-semibold">{{ __('Notice') }}</p>
+                        <p class="font-semibold">{{ __('LET OP!') }}</p>
 
-                        <p>{{ __('It is important to consider the consequences of our spending habits, especially when it comes to financial decisions. If you find yourself tempted to spend money you do not have, take a moment to reflect.') }}</p>
-                        <p>{{ __('Remember, your financial well-being is crucial, and making responsible choices is key. If you are facing difficulties in controlling your spending habits, do not hesitate to seek friendly and professional guidance. There are resources available that can provide valuable advice and support.') }}</p>
+                        <p>{{ __('Het is belangrijk om verantwoordelijk met je geld om te gaan. Kom niet in de verleiding om geld uit te geven dat je niet hebt!') }}</p>
+                        <p>{{ __('Vergeet niet dat je financiële welzijn cruciaal is en dat het maken van verantwoorde keuzes essentieel is. Als je problemen ervaart bij het beheersen van je uitgaven, aarzel dan niet om professionele begeleiding te zoeken. Er zijn verschillende hulpmiddelen beschikbaar die advies en ondersteuning kunnen bieden.') }}</p>
                     </div>
                 </div>
             </x-modals.regular-modal>
@@ -55,15 +55,15 @@
     <div class="row-start-2 md:row-auto col-span-12 flex flex-col gap-y-3 md:col-span-5 lg:col-span-4 xl:col-span-3">
         <x-content.content-card icon="currency-icon" classes="border dark:border-gray-900">
             <x-slot:title>
-                {{ __('Top up account') }}
+                {{ __('Account opwaarderen') }}
             </x-slot:title>
 
             <x-slot:under-title>
-                {{ __('Donate to :hotel', ['hotel' => setting('hotel_name')]) }}
+                {{ __('Doneer aan :hotel', ['hotel' => setting('hotel_name')]) }}
             </x-slot:under-title>
 
             <div class="text-sm text-center py-2 px-4 rounded bg-gray-100 text-black dark:text-gray-100 dark:bg-gray-700">
-                {{ __('Current balance: $:balance', ['balance' => auth()->user()->website_balance]) }}
+                {{ __('Huidig saldo: €:balance', ['balance' => auth()->user()->website_balance]) }}
             </div>
 
             @if(config('paypal.live.client_id') && config('paypal.live.client_secret'))
@@ -73,12 +73,12 @@
                     <x-form.input name="amount" type="number" value="0" placeholder="amount" />
 
                     <button type="submit" class="mt-2 w-full rounded bg-blue-600 hover:bg-blue-700 text-white p-2 border-2 border-blue-500 transition ease-in-out duration-150 font-semibold">
-                        {{ __('Donate') }}
+                        {{ __('Doneer') }}
                     </button>
                 </form>
             @else
                 <p class="dark:text-gray-100  mt-4 text-xs">
-                    {{ __('Please setup the paypal credentials to allow for top ups') }}
+                    {{ __('Voer je PayPal-gegevens in om te kunnen opwaarderen') }}
                 </p>
             @endif
         </x-content.content-card>
@@ -90,7 +90,7 @@
             </x-slot:title>
 
             <x-slot:under-title>
-                {{ __('Use a voucher for free credit') }}
+                {{ __('Gebruik een voucher voor gratis tegoed') }}
             </x-slot:under-title>
 
             <form action="{{ route('shop.use-voucher') }}" method="POST">
@@ -99,7 +99,7 @@
                 <x-form.input name="code" type="text" placeholder="Voucher" />
 
                 <x-form.secondary-button classes="mt-2">
-                    {{ __('Use voucher') }}
+                    {{ __('Gebruik voucher') }}
                 </x-form.secondary-button>
             </form>
         </x-content.content-card>

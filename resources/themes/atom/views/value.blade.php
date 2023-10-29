@@ -1,5 +1,5 @@
 <x-app-layout>
-    @push('title', __('Rare values'))
+    @push('title', __('Ruilwaarden'))
 
     <div class="col-span-12">
         <div class="flex flex-col gap-y-4">
@@ -8,7 +8,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
                 </svg>
 
-                {{ __('Go back to values') }}
+                {{ __('Ga terug naar ruilwaarden') }}
             </a>
             <x-content.content-card icon="dragon.png">
                 <x-slot:title>
@@ -16,7 +16,7 @@
                 </x-slot:title>
 
                 <x-slot:under-title>
-                    {{ __('Here is a list of all the owned :value`s', ['value' => $value->name]) }}
+                    {{ __('Hier is een lijst met al je :value eigendommen', ['value' => $value->name]) }}
                 </x-slot:under-title>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">

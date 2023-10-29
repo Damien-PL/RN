@@ -25,10 +25,10 @@ class LeaderboardController extends Controller
             ->get();
 
         $getUserSettings = fn($column) => UserSetting::query()
-            ->whereNotIn('user_id', $staffUserIds)
+         
             ->select('user_id', $column)
             ->orderByDesc($column)
-            ->take(9)
+            ->take(20)
             ->with('user:id,username,look')
             ->get();
 

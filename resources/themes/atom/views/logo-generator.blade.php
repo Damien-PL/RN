@@ -5,7 +5,7 @@
         <x-content.content-card icon="hotel-icon" classes="border dark:border-gray-900">
             <x-slot:title>
                 Logo generator
-            </x-slot:title>
+</x-slot:title>
 
             <x-slot:under-title>
                 {{ __('Generate your very own logo') }}
